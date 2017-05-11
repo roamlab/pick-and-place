@@ -1,9 +1,0 @@
-[submodule "MotionPlanning/universal_robot"]
-	path = MotionPlanning/universal_robot
-	url = https://github.com/ros-industrial/universal_robot.git
-[submodule "MotionPlanning/ur_modern_driver"]
-	path = MotionPlanning/ur_modern_driver
-	url = https://github.com/ThomasTimm/ur_modern_driver.git
-[submodule "Perception/tabletop_object_detector/pr2_object_manipulation"]
-	path = Perception/tabletop_object_detector/pr2_object_manipulation
-	url = https://github.com/ros-interactive-manipulation/pr2_object_manipulation.git
