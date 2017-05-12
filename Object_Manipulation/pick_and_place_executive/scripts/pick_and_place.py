@@ -10,39 +10,19 @@ import roslib, rospy, actionlib
 import numpy, scipy, time, sys, copy
 import moveit_commander, moveit_python, moveit_msgs.msg
 
-"""
-#from object_manipulation_msgs.srv import FindClusterBoundingBox, FindClusterBoundingBoxRequest
-from pr2_gripper_grasp_planner_cluster.srv import FindClusterBoundingBox, FindClusterBoundingBoxRequest
-from tabletop_object_detector.srv import TabletopDetection, TabletopDetectionRequest
-#from object_manipulation_msgs.srv import GraspPlanning, GraspPlanningRequest
-from manipulation_msgs.srv import GraspPlanning, GraspPlanningRequest
-#from object_manipulation_msgs.msg import GraspPlanningAction, GraspPlanningGoal
-from manipulation_msgs.msg import GraspPlanningAction, GraspPlanningGoal
-from pr2_gripper_grasp_planner_cluster.srv import SetPointClusterGraspParams, SetPointClusterGraspParamsRequest
-#from pr2_gripper_grasp_planner_cluster.srv import GraspPose, GraspPoseResponse
-from visualization_msgs.msg import Marker
-import tf.transformations
-#import object_manipulator.draw_functions as draw_functions
-import draw_functions as df
-#from object_manipulator.convert_functions import *
-import convert_functions
-from geometry_msgs.msg import PoseStamped, Pose, Point, Quaternion, Vector3 
-from std_msgs.msg import String
-#from pr2_gripper_grasp_planner_cluster.srv import GraspPose, GraspPoseRequest
-"""
 
 
 import sys
-from grasp_planner.srv import FindClusterBoundingBox, FindClusterBoundingBoxRequest
+from grasp_planner_cluster.srv import FindClusterBoundingBox, FindClusterBoundingBoxRequest
 from tabletop_object_detector.srv import TabletopDetection, TabletopDetectionRequest
 from manipulation_msgs.srv import GraspPlanning, GraspPlanningRequest
 from manipulation_msgs.msg import GraspPlanningAction, GraspPlanningGoal
-from grasp_planner.srv import SetPointClusterGraspParams, SetPointClusterGraspParamsRequest
+from grasp_planner_cluster.srv import SetPointClusterGraspParams, SetPointClusterGraspParamsRequest
 from visualization_msgs.msg import Marker
 import tf.transformations
 #from grasp_planner.draw_functions import draw_functions as df
 
-sys.path.insert(0, '../../grasp_planner/scripts')
+sys.path.insert(0, '../../grasp_planner_cluster/scripts')
 import draw_functions as df
 import convert_functions
 
@@ -359,6 +339,7 @@ def pick_and_place(grasp_pose, object_dims):
     move_to_pose(up_pose, group, robot, display_trajectory_publisher)
     print "SUCCESS"
     print "============ STOPPING"
+    print "============ Clear mybox object from scene objects in rviz"
     moveit_commander.roscpp_shutdown()
 
 
