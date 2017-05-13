@@ -108,7 +108,7 @@ find_package(Boost REQUIRED COMPONENTS system)
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-  INCLUDE_DIRS include
+  INCLUDE_DIRS
   LIBRARIES camera_calibration
   CATKIN_DEPENDS cmake_modules eigen_stl_containers geometry_msgs pcl_conversions pcl_ros roscpp sensor_msgs shape_msgs std_msgs tf visualization_msgs
   DEPENDS system_lib
